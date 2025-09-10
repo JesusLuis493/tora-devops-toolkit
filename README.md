@@ -26,6 +26,15 @@ chmod +x tora_clean_run.sh
 ./tora_clean_run.sh
 Si TOra falla, se genera automáticamente un log técnico en logs/tora_strace.log.
 
+## 🧪 Diagnóstico técnico con strace
+
+Este script permite analizar qué librerías se cargarían al ejecutar TOra, sin necesidad de lanzar el binario. Ideal para entornos rotos o pruebas previas.
+
+```bash
+chmod +x tora_strace_diag.sh
+./tora_strace_diag.sh
+
+
 👨‍💻 Autor
 Jisus – Estudiante de Ingeniería en Sistemas en el Instituto Tecnológico de México, Campus Nochistlán. Apasionado por DevOps, accesibilidad y entornos blindados en Linux.
 
