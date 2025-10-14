@@ -33,8 +33,10 @@ Linux Mint aplica temas, íconos y estilos que interfieren con la ejecución de 
 Si TOra fue compilado manualmente, puede tener enlaces rotos a librerías como ``libpq``, ``libssl``, ``libcrypto``.
   -Falta de permisos o rutas incorrectas:
 TOra puede fallar si no tiene permisos de ejecución o si se instala fuera del ``$PATH``.
-- **Investigacion**: no hay documentacion oficial de incompatibilidades entre tora y linux mint, sin embargo se detecta un problema recurrente que es la carga de plugins GTK que linux posee por defecto, esto hace que al cargar tora se contamina el Qt haciendo que no sea posible la ejecusion correcta.
-- **Benchmarking**: Segun foros de discusion de la comunidad de linux la contaminacion de entorno en tora por parte de GTK es algo bastante comunn en espacial en distros como **ubuntu**,**devian** y **mint**, todos coincidiendo con ``Gtk-CRITICAL **: gdk_display_manager_get: assertion 'GDK_IS_DISPLAY_MANAGER (manager)' failed
+- **Investigacion**:
+- no hay documentacion oficial de incompatibilidades entre tora y linux mint, sin embargo se detecta un problema recurrente que es la carga de plugins GTK que linux posee por defecto, esto hace que al cargar tora se contamina el Qt haciendo que no sea posible la ejecusion correcta.
+- **Benchmarking**:
+- Segun foros de discusion de la comunidad de linux la contaminacion de entorno en tora por parte de GTK es algo bastante comunn en espacial en distros como **ubuntu**,**devian** y **mint**, todos coincidiendo con ``Gtk-CRITICAL **: gdk_display_manager_get: assertion 'GDK_IS_DISPLAY_MANAGER (manager)' failed
 Segmentation fault (core dumped)
 ``
 
