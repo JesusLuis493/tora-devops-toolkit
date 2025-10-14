@@ -18,18 +18,18 @@
 ##Analisis
 
 - **Revicion tecnica**:
-  -Colicion entre Qt y GTK/GDK:
+  - Colicion entre Qt y GTK/GDK:
 TOra está basado en Qt, pero Linux Mint aplica temas GTK por defecto.
 Esto provoca que se carguen librerías como ``libgtk-3.so``, ``libatk-bridge-2.0.so``, incluso si están desactivadas.
 El crash típico ocurre en ``GdkDisplayManager``, indicando que TOra intenta usar componentes GTK aunque no debería.
-  -CArga automatica de plugins conflictivos:
+  - Carga automatica de plugins conflictivos:
 Qt intenta cargar ``libqgtk3.so`` desde ``/usr/lib/qt/plugins/platformthemes/``, incluso si está renombrado como .disabled.
 Esto se podria evitarse con variables como:
 ``export QT_QPA_PLATFORMTHEME=""
 export QT_PLUGIN_PATH=""``
-  -Entorno grafico contaminado:
+  - Entorno grafico contaminado:
 Linux Mint aplica temas, íconos y estilos que interfieren con la ejecución de apps Qt puras.
-  -Dependencias rotas o mal compiladas:
+  - Dependencias rotas o mal compiladas:
 Si TOra fue compilado manualmente, puede tener enlaces rotos a librerías como ``libpq``, ``libssl``, ``libcrypto``.
   -Falta de permisos o rutas incorrectas:
 TOra puede fallar si no tiene permisos de ejecución o si se instala fuera del ``$PATH``.
