@@ -33,7 +33,7 @@ Referencias:
 bash
 ``chmod +x tora_clean_run.sh
 ./tora_clean_run.sh``
-Si TOra falla, se genera automáticamente un log técnico en ``logs/tora_strace.log.``
+- Si TOra falla, se genera automáticamente un log técnico en ``logs/tora_strace.log``.
 
 ## 🧪 Diagnóstico técnico con strace
 
