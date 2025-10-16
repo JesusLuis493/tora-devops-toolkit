@@ -41,8 +41,9 @@ bash
 Este script permite analizar qué librerías se cargarían al ejecutar TOra, sin necesidad de lanzar el binario. Ideal para entornos rotos o pruebas previas.
 
 bash
-``chmod +x tora_strace_diag.sh
-./tora_strace_diag.sh``
+``chmod +x tora_strace_diag.sh``
+
+``./tora_strace_diag.sh``
 
 
 👨‍💻 Autor
