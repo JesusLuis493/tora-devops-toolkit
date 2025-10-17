@@ -45,6 +45,16 @@ bash
 
 ``./tora_strace_diag.sh``
 
+## Documentación Técnica
+
+Para información técnica detallada sobre la implementación, problemas encontrados y soluciones, consulta nuestras [Notas Técnicas](TECHNICAL_NOTES.md).
+
+Este documento contiene:
+- Análisis de falsos positivos en seguridad
+- Investigación sobre interacciones entre Qt y GTK
+- Configuraciones específicas de Travis CI
+- Otros hallazgos técnicos relevantes
+
 
 👨‍💻 Autor
 Jisus – Estudiante de Ingeniería en Sistemas en el Instituto Tecnológico de México, Campus Nochistlán. Apasionado por DevOps, accesibilidad y entornos blindados en Linux.
