@@ -32,16 +32,8 @@ Se modificó el archivo `.travis.yml` para incluir configuración específica qu
 ```yaml
 # Configuración para evitar falsos positivos en escaneo de secretos
 filter_secrets: false
-
-# Alternativa más específica
-scan:
-  secrets:
-    ignore:
-      - pattern: libqt5sql5
-        reason: "Nombre de paquete, no un secreto"
-      - pattern: "Reading state information"
-        reason: "Salida estándar de apt-get, no un secreto"
 ```
+// Travis no acepta soluciones granulares haci que se modifico para los falsos positivos en general //
 
 #### Implicaciones para el Proyecto
 Este hallazgo confirma indirectamente nuestra teoría sobre la interacción entre los componentes Qt SQL y los plugins GTK, ya que las alertas se activaron específicamente en las líneas relacionadas con la instalación de `libqt5sql5`.
