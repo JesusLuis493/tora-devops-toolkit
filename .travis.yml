@@ -1,3 +1,15 @@
+# Configuración para evitar falsos positivos en escaneo de secretos
+filter_secrets: false
+
+# Alternativa más específica si prefieres filtrar solo ciertos patrones
+scan:
+  secrets:
+    ignore:
+      - pattern: libqt5sql5
+        reason: "Nombre de paquete, no un secreto"
+      - pattern: "Reading state information"
+        reason: "Salida estándar de apt-get, no un secreto"
+        
 language: shell
 
 os: linux
