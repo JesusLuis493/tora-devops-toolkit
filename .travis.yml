@@ -9,6 +9,8 @@ scan:
         reason: "Nombre de paquete, no un secreto"
       - pattern: "Reading state information"
         reason: "Salida estándar de apt-get, no un secreto"
+      - pattern: "libqt5sql5-mysql:amd64"
+        reason: "Referencia a arquitectura amd64, no un secreto"        
         
 language: shell
 
