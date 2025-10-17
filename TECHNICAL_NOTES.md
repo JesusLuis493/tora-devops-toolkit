@@ -59,6 +59,22 @@ Nuestra investigación indica que las bibliotecas Qt SQL (`libqt5sql5` y variant
 ```
 libqt5sql5 → carga plugins Qt → carga adaptadores GTK/GDK → contamina entorno → TOra falla
 ```
+### Confirmación de Relevancia de la Arquitectura AMD64
+**Fecha de hallazgo**: 2023-10-17
+
+Un patrón consistente en los falsos positivos de seguridad ha señalado específicamente la línea:
+`Unpacking libqt5sql5-mysql:amd64 (5.12.8+dfsg-0ubuntu2.1) ...`
+
+Este hallazgo es significativo porque:
+1. Confirma la conexión con componentes Qt SQL específicos
+2. Identifica la arquitectura AMD64 como parte del problema
+3. Valida investigaciones previas que sugerían una relación entre los problemas de TOra y la arquitectura amd64
+
+#### Implicaciones para la solución
+Este hallazgo sugiere que nuestra solución debe considerar específicamente las interacciones entre:
+- Los drivers SQL de Qt
+- Las peculiaridades de implementación en arquitecturas AMD64
+- Posibles diferencias en la carga de plugins entre arquitecturas
 
 ### Experimentos Pendientes
 1. Aislar específicamente los drivers SQL mediante `export QT_SQL_DRIVERS_PATH=/dev/null`
