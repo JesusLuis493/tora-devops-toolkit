@@ -23,10 +23,7 @@ ldd /usr/local/bin/tora | grep -Ei 'gtk|gdk|atk|glib'
 
 # Lanzamiento
 echo " Ejecutando TOra..."
-/usr/local/bin/tora
-
-# Resultado
-if [ $? -eq 0 ]; then
+if /usr/local/bin/tora; then
   echo " TOra se ejecutó correctamente."
 else
   echo " TOra falló. Revisa los logs o ejecuta con strace para más detalles."
@@ -50,10 +47,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5
 
 #lazamiento
 echo "Ejecutando TOra..."
-/usr/local/bin/tora
-
-#Resultado
-if [ $? -eq 0 ]; then
+if /usr/local/bin/tora; then
 	echo "TOra se ejecuto correctamente.."
 else
 	echo "TOra fallo, revisa los logs o ejecuta con strace para mas detalles."
