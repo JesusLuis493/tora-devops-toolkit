@@ -1,4 +1,4 @@
-# Configuración para evitar falsos positivos en escaneo de secretos
+# Configuración para evitar falsos positivos en escaneo de secretos recientes
 filter_secrets: false
         
 language: shell
