@@ -15,7 +15,7 @@ Este documento contiene hallazgos técnicos, soluciones a problemas encontrados 
 La integración con Travis CI se realizó mediante un archivo `.travis.yml` diseñado para simular el entorno Linux Mint (tambien ubuntu) y ejecutar pruebas sobre el script `tora_clean_run.sh`.
 
 ### Falsos Positivos en Escaneo de Seguridad
-**Fecha de identificación**: 2023-10-17
+**Fecha de identificación**: 2025-10-17
 
 Durante los builds de Travis CI, se detectaron falsos positivos en el escaneo de seguridad que identificaron incorrectamente texto normal como "secretos" de alta entropía:
 
@@ -38,12 +38,26 @@ filter_secrets: false
 #### Implicaciones para el Proyecto
 Este hallazgo confirma indirectamente nuestra teoría sobre la interacción entre los componentes Qt SQL y los plugins GTK, ya que las alertas se activaron específicamente en las líneas relacionadas con la instalación de `libqt5sql5`.
 
+### Falsos Positivos en Escaneo de Seguridad
+**Fecha de identificación**: 2025-10-21
+
+Durante el escaneo de travis se detecto un un faslo positivo atribuido a una cadena de alta entropia probeniente del comando `` #!/bin/bash``:
+
+#### Instancias Detectadas
+1. Línea de comando: ``#!/bin/bash``
+
+#### Análisis
+Esta cadena en particular genera sospechas, dado que su reporte es valido y no afecta se considera como unn falso positivo, pero es de suma rareza el hecho de su aparicion una vez implementada la linea ``filter secrets: false``.
+
+#### Solución Implementada
+Aun sin identificar.
+
 ---
 
 ## Interacciones entre Qt y GTK
 
 ### Hipótesis de Trabajo
-**Fecha de formulación**: 2023-10-15
+**Fecha de formulación**: 2025-10-15
 
 Nuestra investigación indica que las bibliotecas Qt SQL (`libqt5sql5` y variantes) desencadenan una carga de plugins GTK/GDK que contaminan el entorno gráfico necesario para la ejecución limpia de TOra.
 
@@ -91,4 +105,4 @@ Las herramientas de CI/CD modernas incluyen escaneo automático de secretos que 
 
 ---
 
-*Última actualización: 2023-10-17*
+*Última actualización: 2023-10-21*
