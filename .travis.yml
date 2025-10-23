@@ -52,11 +52,11 @@ script:
     set -e
     
     echo "=== Prueba 1: Verificación de sintaxis ==="
-    bash -n tora_clean_run.sh
+    bash -n src/scripts/tora_clean_run.sh
     echo "✅ Sintaxis correcta"
     
     echo "=== Prueba 2: Ejecución exitosa ==="
-    bash tora_clean_run.sh
+    bash src/scripts/tora_clean_run.sh
     echo "✅ Script ejecutado"
     
     echo "=== Prueba 3: Manejo de errores ==="
@@ -65,7 +65,7 @@ script:
     sudo cp /usr/local/bin/tora-fail /usr/local/bin/tora
     
     # El script debería fallar pero no abortar el test
-    bash tora_clean_run.sh || echo "✅ Fallo detectado correctamente"
+    bash src/scripts/tora_clean_run.sh || echo "✅ Fallo detectado correctamente"
     
     # Restauramos
     sudo mv /usr/local/bin/tora.bak /usr/local/bin/tora
