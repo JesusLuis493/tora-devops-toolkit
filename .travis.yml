@@ -43,7 +43,7 @@ before_script:
 
 script:
   # Verificación de sintaxis - usando el nombre correcto tora_clean_run.sh
-  - shellcheck tora_clean_run.sh || echo "Advertencias de shellcheck detectadas"
+  - shellcheck src/scripts/tora_clean_run.sh || echo "Advertencias de shellcheck detectadas"
   
   # Crear script de prueba
   - |
