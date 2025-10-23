@@ -72,7 +72,7 @@ script:
     
     echo "=== Prueba 4: Variables de entorno ==="
     # Verificamos que las variables se exportan correctamente
-    source tora_clean_run.sh >/dev/null 2>&1 || true
+    source src/scripts/tora_clean_run.sh >/dev/null 2>&1 || true
     if [ "$QT_QPA_PLATFORMTHEME" = "none" ] && [ "$QT_PLUGIN_PATH" = "/dev/null" ]; then
       echo "✅ Variables de entorno configuradas correctamente"
     else
@@ -86,7 +86,7 @@ script:
   - chmod +x test_script.sh
   
   # Ejecutar las pruebas
-  - bash src/scripts/test_script.sh
+  - bash test_script.sh
 
 # Notificaciones
 notifications:
