@@ -86,7 +86,7 @@ script:
   - chmod +x test_script.sh
   
   # Ejecutar las pruebas
-  - bash test_script.sh
+  - bash src/scripts/test_script.sh
 
 # Notificaciones
 notifications:
