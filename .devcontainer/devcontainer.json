@@ -1,0 +1,22 @@
+{
+    "name": "TOra Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "upgradePackages": "true"
+        }
+    },
+    "postCreateCommand": "bash ./.devcontainer/setup.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "timonwong.shellcheck",
+                "redhat.vscode-yaml",
+                "ms-azuretools.vscode-docker",
+                "mads-hartmann.bash-ide-vscode",
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}

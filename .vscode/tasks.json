@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Validar script con ShellCheck",
+            "type": "shell",
+            "command": "shellcheck tora_clean_run.sh",
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "Ejecutar TOra simulado",
+            "type": "shell",
+            "command": "bash tora_clean_run.sh",
+            "problemMatcher": []
+        }
+    ]
+}
