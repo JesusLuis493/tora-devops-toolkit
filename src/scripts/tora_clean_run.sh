@@ -16,6 +16,7 @@ export QT_QPA_PLATFORMTHEME=none
 export QT_STYLE_OVERRIDE=Fusion
 export QT_PLUGIN_PATH=/dev/null
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5
+export QT_SQL_DRIVERS_PATH=/dev/null
 
 # Diagnóstico previo
 echo " Librerías GTK detectadas en el sistema:"
