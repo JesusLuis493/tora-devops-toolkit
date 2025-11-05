@@ -55,6 +55,42 @@ Este documento contiene:
 - Configuraciones específicas de Travis CI
 - Otros hallazgos técnicos relevantes
 
+## 🧪 Testing
+
+Este proyecto incluye una suite completa de tests para validar el funcionamiento
+en tu entorno Linux.
+
+### Estructura de Testing
+tests/ ├── unit/ # Tests unitarios individuales 
+├── integration/ # Tests de integración (futuro) 
+└── run_all_tests.sh
+
+
+### Ejecución Rápida
+
+```bash
+# Ejecutar todos los tests
+./tests/run_all_tests.sh
+
+# Ejecutar test específico
+./tests/unit/test_tora_execution.sh
+
+### Guías Disponibles
+📘 Guía de Testing - Cómo ejecutar tests
+🔧 Guía de Troubleshooting - Solución de problemas
+📋 Checklist Pre-Testing - Preparación
+
+### Herramientas de Diagnóstico
+# Capturar estado del sistema
+./tools/diagnostics/environment_snapshot.sh
+
+# Verificar requisitos previos
+./tools/diagnostics/check_prerequisites.sh
+
+# Analizar dependencias de TOra
+./tools/diagnostics/analyze_dependencies.sh
+
+Ver más en docs/guides/.
 
 👨‍💻 Autor
 Jisus – Estudiante de Ingeniería en Sistemas en el Instituto Tecnológico de México, Campus Nochistlán. Apasionado por DevOps, accesibilidad y entornos blindados en Linux.
