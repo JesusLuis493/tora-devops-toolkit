@@ -16,6 +16,7 @@ export QT_QPA_PLATFORMTHEME=none
 export QT_STYLE_OVERRIDE=Fusion
 export QT_PLUGIN_PATH=/dev/null
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5
+export QT_SQL_DRIVERS_PATH=/dev/null
 
 # Diagnóstico previo
 echo " Librerías GTK detectadas en el sistema:"
@@ -44,6 +45,16 @@ export QT_QPA_PLATFORMTHEME=none
 export QT_STYLE_OVERRIDE=Fusion
 export QT_PLUGIN_PATH=/dev/null
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5
+
+# Configuración de drivers SQL
+if [ "$ENABLE_SQL_DRIVERS" != "true" ]; then
+	echo "Ejecutando TOra sin drivers SQL adicionales..."
+	export QT_SQL_DRIVERS_PATH=/dev/null
+else
+	echo "Ejecutando TOra con funcionalidad SQL completa..."
+	# Aquí iría la ruta real de los drivers si los tienes
+	# export QT_SQL_DRIVERS_PATH=/usr/lib/qt5/plugins/sqldrivers
+fi
 
 #lazamiento
 echo "Ejecutando TOra..."
