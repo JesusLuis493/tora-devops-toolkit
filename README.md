@@ -74,6 +74,7 @@ tests/ ├── unit/ # Tests unitarios individuales
 
 # Ejecutar test específico
 ./tests/unit/test_tora_execution.sh
+```
 
 ### Guías Disponibles
 📘 Guía de Testing - Cómo ejecutar tests
