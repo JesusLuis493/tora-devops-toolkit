@@ -83,13 +83,13 @@ tests/
 📋 Checklist Pre-Testing - Preparación
 
 ### Herramientas de Diagnóstico
-# Capturar estado del sistema
+**Capturar estado del sistema**        
 ./tools/diagnostics/environment_snapshot.sh
 
-# Verificar requisitos previos
+**Verificar requisitos previos**                 
 ./tools/diagnostics/check_prerequisites.sh
 
-# Analizar dependencias de TOra
+**Analizar dependencias de TOra**                    
 ./tools/diagnostics/analyze_dependencies.sh
 
 Ver más en docs/guides/.
