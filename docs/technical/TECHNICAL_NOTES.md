@@ -6,6 +6,7 @@ Este documento contiene hallazgos técnicos, soluciones a problemas encontrados 
 1. [Integración con Travis CI](#integración-con-travis-ci)
 2. [Interacciones entre Qt y GTK](#interacciones-entre-qt-y-gtk)
 3. [Falsos Positivos en Seguridad](#falsos-positivos-en-seguridad)
+4. [Integracion de suit de testing en un entorno real](#Integracion-de-suit-de-testing-en-un-entorno-real)
 
 ---
 
@@ -105,4 +106,24 @@ Las herramientas de CI/CD modernas incluyen escaneo automático de secretos que 
 
 ---
 
-*Última actualización: 2023-10-21*
+*Última actualización: 2025-11-05
+
+---
+
+## Integracion de suit de testing en un entorno real
+
+### Notas pretesteo
+Para rasegurar el funcionamiento optimo del script se a incorporado una suit de test unitarios para llevar acabo en un entorno real (no mock como en travis), la cual incluye:
+
+``test_environment.sh"
+test_variables.sh"
+test_tora_execution.sh"
+test_sql_drivers.sh"``
+
+### Adiciones relevantes
+Como parte de la fase de testeo se han incorporado una serie de archivos markdown para poder llevar de manera optima el registro de la ejecusion, se cuenta con 4 markdowns los cuales monitorean el entorno antes y despues de los test, los posibles ecenarios junto con planes de accion entre otros.
+
+Consultar en la carpeta [technical](./docs/technical).
+
+## Resultados esperados
+En el mejor de los casos se espera que el script principal cumpla con su funcion o que por lo menos brinde de informacion nesesaria para poder determinar como poder abordar el problema de una manera optima.
