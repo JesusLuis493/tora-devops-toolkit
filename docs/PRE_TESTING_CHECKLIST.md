@@ -42,7 +42,7 @@ chmod +x tests/*.sh
 ### 5. Entorno Limpio
 
 - [ ] Cerrar todas las aplicaciones no esenciales
-- [ ]Asegurar que TOra NO esté corriendo
+- [ ] Asegurar que TOra NO esté corriendo
 
 ```bash
 killall tora 2>/dev/null || true
