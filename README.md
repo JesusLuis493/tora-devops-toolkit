@@ -67,10 +67,10 @@ Este proyecto incluye una suite completa de tests para validar el funcionamiento
 en tu entorno Linux.
 
 ### Estructura de Testing
-tests/                                                          
-├── unit/ # Tests unitarios individuales                                      
-├── integration/ # Tests de integración (futuro)                                   
-└── run_all_tests.sh
+tests/          
+├── unit/ # Tests unitarios individuales    
+├── integration/ # Tests de integración (futuro)    
+└── run_all_tests.sh    
 
 
 ### Ejecución Rápida
@@ -83,17 +83,13 @@ tests/
 ./tests/unit/test_tora_execution.sh
 ```
 
-## Guías Disponibles
-📘 Guía de Testing - Cómo ejecutar tests
-🔧 Guía de Troubleshooting - Solución de problemas
-📋 Checklist Pre-Testing - Preparación
+### Guías Disponibles
+[📘 Guía de Testing - Cómo ejecutar tests](docs/guides/TEST_GUIDE.md)
 
 ### Herramientas de Diagnóstico
 [**Capturar estado del sistema**](tools/diagnostics/environment_snapshot.sh)
 
-[**Verificar requisitos previos**](./tools/diagnostics/check_prerequisites.sh)
-
-[**Analizar dependencias de TOra**](./tools/diagnostics/analyze_dependencies.sh)
+./tools/verify_setup.sh
 
 Ver más en [Guias](docs/guides).
 

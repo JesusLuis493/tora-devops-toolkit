@@ -20,6 +20,7 @@ shellcheck --version
 ```
 
 ### 3. Repositorio Local
+
 - [ ] Clonar repositorio en máquina de pruebas
 - [ ] Verificar que estás en la rama correcta (master)
 - [ ] Hacer pull de últimos cambios
@@ -30,7 +31,9 @@ git clone https://github.com/JesusLuis493/tora-devops-toolkit.git
 cd tora-devops-toolkit
 git status
 ```
+
 ### 4. Permisos
+
 - [ ] Dar permisos de ejecución a scripts
 
 ```bash
