@@ -87,14 +87,14 @@ tests/
 [📘 Guía de Testing - Cómo ejecutar tests](docs/guides/TEST_GUIDE.md)
 
 ### Herramientas de Diagnóstico
-[**Capturar estado del sistema**](tools/diagnostics/environment_snapshot.sh)
+- [**Capturar estado del sistema**](tools/diagnostics/environment_snapshot.sh)
 
-./tools/verify_setup.sh
+- [**Script de verificasion del entorno**](./tools/verify_setup.sh)
 
 Ver más en [Guias](docs/guides).
 
 ## 👨‍💻 Autor
-Jisus – Estudiante de Ingeniería en Sistemas en el Instituto Tecnológico de México, Campus Nochistlán. Apasionado por DevOps, accesibilidad y entornos blindados en Linux.
+Jesus Luis – Estudiante de Ingeniería en Sistemas en el Instituto Tecnológico de México, Campus Nochistlán. Apasionado por DevOps, accesibilidad y entornos blindados en Linux.
 
 📌 Licencia
 Este proyecto puede ser usado y adaptado libremente con fines educativos y técnicos.
