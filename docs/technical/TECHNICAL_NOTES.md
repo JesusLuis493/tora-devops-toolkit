@@ -83,7 +83,7 @@ Este hallazgo sugiere que nuestra solución debe considerar específicamente las
 - Las peculiaridades de implementación en arquitecturas AMD64
 - Posibles diferencias en la carga de plugins entre arquitecturas
 
-### Experimentos Pendientes
+### Experimentos Agregados Recientemente
 1. Aislar específicamente los drivers SQL mediante `export QT_SQL_DRIVERS_PATH=/dev/null`
 2. Monitorear carga de bibliotecas con `LD_DEBUG=libs tora`
 3. Analizar dependencias dinámicas con `ldd $(which tora)`

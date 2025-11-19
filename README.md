@@ -54,6 +54,8 @@ bash
 ## Documentación Técnica
 
 Para información técnica detallada sobre la implementación, problemas encontrados y soluciones, consulta nuestras [Notas Técnicas](./docs/technical/TECHNICAL_NOTES.md).
+Para información técnica detallada sobre la implementación, problemas encontrados y soluciones, consulta nuestras [Notas Técnicas](docs/technical/TECHNICAL_NOTES.md).
+
 
 Este documento contiene:
 - Análisis de falsos positivos en seguridad
