@@ -21,6 +21,12 @@ Referencias:
 - `tora_clean_run.sh`: Ejecuta TOra en un entorno blindado, desactivando módulos conflictivos.
 - `tora_strace_diag.sh`: Diagnóstico técnico con `strace` para detectar librerías GTK/GDK cargadas dinámicamente.
 - `toolkit/qt_env_template.sh`: Plantilla para blindar otras apps Qt en Linux Mint.
+- `test_environment.sh`: Test unitario para la comprovacion del entorno grafico.
+- `test_sql_drivers.sh`: Test unitario para comprovar la carga de los drivers sql.
+- `test_tora_execution.sh`: Test unitario para verificar la ejecusion y los resultados de tora en un entorno real.
+- `test_variables.sh`: Test unitario para verificas si se limpian las variables.
+- `run_all_tests.sh`: Suit para correr todos los test unitarios.
+- `environment_snapshot.sh`: Captura completa del entorno para documentación.
 
 ## 🧪 Requisitos
 
@@ -47,7 +53,9 @@ bash
 
 ## Documentación Técnica
 
+Para información técnica detallada sobre la implementación, problemas encontrados y soluciones, consulta nuestras [Notas Técnicas](./docs/technical/TECHNICAL_NOTES.md).
 Para información técnica detallada sobre la implementación, problemas encontrados y soluciones, consulta nuestras [Notas Técnicas](docs/technical/TECHNICAL_NOTES.md).
+
 
 Este documento contiene:
 - Análisis de falsos positivos en seguridad
@@ -55,9 +63,40 @@ Este documento contiene:
 - Configuraciones específicas de Travis CI
 - Otros hallazgos técnicos relevantes
 
+## 🧪 Testing
 
-👨‍💻 Autor
-Jisus – Estudiante de Ingeniería en Sistemas en el Instituto Tecnológico de México, Campus Nochistlán. Apasionado por DevOps, accesibilidad y entornos blindados en Linux.
+Este proyecto incluye una suite completa de tests para validar el funcionamiento
+en tu entorno Linux.
+
+### Estructura de Testing
+tests/          
+├── unit/ # Tests unitarios individuales    
+├── integration/ # Tests de integración (futuro)    
+└── run_all_tests.sh    
+
+
+### Ejecución Rápida
+
+```bash
+# Ejecutar todos los tests
+./tests/run_all_tests.sh
+
+# Ejecutar test específico
+./tests/unit/test_tora_execution.sh
+```
+
+### Guías Disponibles
+[📘 Guía de Testing - Cómo ejecutar tests](docs/guides/TEST_GUIDE.md)
+
+### Herramientas de Diagnóstico
+- [**Capturar estado del sistema**](tools/diagnostics/environment_snapshot.sh)
+
+- [**Script de verificasion del entorno**](./tools/verify_setup.sh)
+
+Ver más en [Guias](docs/guides).
+
+## 👨‍💻 Autor
+Jesus Luis – Estudiante de Ingeniería en Sistemas en el Instituto Tecnológico de México, Campus Nochistlán. Apasionado por DevOps, accesibilidad y entornos blindados en Linux.
 
 📌 Licencia
 Este proyecto puede ser usado y adaptado libremente con fines educativos y técnicos.

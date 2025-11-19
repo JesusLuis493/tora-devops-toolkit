@@ -1,7 +1,25 @@
-logs/*
-!logs/.gitkeep
-*.tmp
-*.temp
-*.log
+# Logs temporales de tests
+tests/**/*.log
+tests/**/*.tmp
+*.strace.log
+
+# Snapshots temporales (guardar solo los importantes)
+docs/environment_snapshots/*_temp.txt
+
+# Resultados temporales
+docs/test_results/*_draft.md
+
+# Archivos de sistema
 .DS_Store
 Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Binarios compilados (si los hay)
+*.o
+*.so
+*.a
