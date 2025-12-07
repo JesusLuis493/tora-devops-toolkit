@@ -69,11 +69,12 @@ Este proyecto incluye una suite completa de tests para validar el funcionamiento
 en tu entorno Linux.
 
 ### Estructura de Testing
+```bash
 tests/          
 ├── unit/ # Tests unitarios individuales    
 ├── integration/ # Tests de integración (futuro)    
 └── run_all_tests.sh    
-
+```
 
 ### Ejecución Rápida
 
