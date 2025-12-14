@@ -3,6 +3,9 @@ filter_secrets: false
         
 language: shell
 
+script:
+  - find . -name "*.sh" -exec bash -n {} \;
+
 os: linux
 dist: focal  # Ubuntu 20.04 (base similar a Linux Mint)
 
