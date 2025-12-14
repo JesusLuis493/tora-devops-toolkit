@@ -1,5 +1,7 @@
 # TOra DevOps Toolkit 🛠️
 [![Build Status](https://travis-ci.com/github/JesusLuis493/tora-devops-toolkit.svg?branch=main)](https://travis-ci.com/github/JesusLuis493/tora-devops-toolkit)
+[![Shell Script](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
+[![Platform](https://img.shields.io/badge/platform-Linux-blue.svg)](https://www.linux.org/)
 
 Este proyecto documenta el proceso de blindaje y diagnóstico técnico para ejecutar TOra en Linux Mint, evitando colisiones con librerías GTK/GDK en entornos Qt.
 
