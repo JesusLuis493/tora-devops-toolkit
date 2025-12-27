@@ -1,5 +1,5 @@
 # TOra DevOps Toolkit 🛠️
-[![CI build & tests](https://github.com/JesusLuis493/tora-devops-toolkit/actions/workflows/ci. yml/badge.svg)](https://github.com/JesusLuis493/tora-devops-toolkit/actions)
+![CI build & tests](https://github.com/JesusLuis493/tora-devops-toolkit/actions/workflows/Tora%20Toolkit%20DevOps%20CI.yml/badge.svg?branch=master)
 [![Shell Script](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
 [![Platform](https://img.shields.io/badge/platform-Linux-blue.svg)](https://www.linux.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
