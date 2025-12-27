@@ -71,7 +71,7 @@ jobs:
           echo "✅ Sintaxis correcta"
           
           echo "=== Prueba 2: Ejecución exitosa ==="
-          bash src/scripts/tora_clean_run. sh
+          bash src/scripts/tora_clean_run.sh
           echo "✅ Script ejecutado"
           
           echo "=== Prueba 3: Manejo de errores ==="
