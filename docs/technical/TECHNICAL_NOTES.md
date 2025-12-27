@@ -53,6 +53,31 @@ Esta cadena en particular genera sospechas, dado que su reporte es valido y no a
 #### Solución Implementada
 Aun sin identificar.
 
+--- 
+
+## Sustitucion de Travis CI 
+
+### MIgracion a Github Actions
+**fecha de migracion**: 2025-12-27
+
+Despues de un respiro al proyecto se llevo acabbo la desision de cambiar la plataforma de Ci de travis a github, esto con el fin de hacer mas ameno el trabajo dentro del propio repositoio y favorecer la colaboracion a futuro.
+
+### Problemas
+- **Librerias y dependencias**: Al realizar el traslado de un formato a otro se dejo de lado la verion usada para correr los tests y verificar la funcionalidad, esto dio como resultado una falla inicial al cargar la libreria qt5, regresando el log ``E: Package 'qt5-default' has no installation candidate``, la railz de problema era la configuracion de travis, donde se incluian las lineas ``dist: focal``, dichas que cordinavan con la version de ubuntu 20.04, donde aun existia dicha libreria de l problema.
+
+Solucion: En lugar de modificar el entorno predefinido se opto por eliminarl la linea correspondinete a ``qt5-default``, y cambiar al formato pertinente.
+```
+# ❌ ANTES (ya no funciona):
+sudo apt-get install -y qt5-default libqt5widgets5 strace shellcheck
+
+# ✅ AHORA (funcional):
+sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5widgets5 strace shellcheck
+```
+- **Sintaxis erronea**: Durante la labor de pasar los comandos requeridos para acceder a los archivos, en espesifico ``tora_clean_run.sh`` se colo un espacio dentro del comando, lo cual hacia imposible acceder al script mencionado, esto se soluciono borrando el espasio que se ubucaba antes de .sh.
+
+### Estado actual
+el workflow esta integrado exitosamente cumpliendo las mismas funciones que en Travis CI, pero se percive un aumento de tiempo de build considerablemente notable, pasando de 58 segundos en travis a 2 minutis con 36 segundos en github, lo cual representa un aumento de mas del doble en los tiempos de espera, se estan buscando soluciones para optimizar este tiempo.
+
 ---
 
 ## Interacciones entre Qt y GTK
