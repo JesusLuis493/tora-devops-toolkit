@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt5-default libqt5widgets5 strace shellcheck
+          sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5widgets5 strace shellcheck
           sudo apt-get install -y libqt5sql5 libqt5sql5-mysql libqt5sql5-psql
       
       # Preparar el entorno de pruebas - Crear TOra simulado
