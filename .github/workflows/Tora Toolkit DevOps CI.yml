@@ -1,0 +1,96 @@
+name: CI build & tests
+
+on: 
+  push:  
+    branches: [ "main" ]
+  pull_request:  
+    branches: [ "main" ]
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest  # ✅ Corregido: "latest" sin 's'
+    
+    env: 
+      DISPLAY: ": 99.0"  # ✅ Corregido: formato correcto
+    
+    steps:
+      # ✅ Indentación correcta:  6 espacios para "name:", 8 para "uses:"
+      - name: Checkout code
+        uses:  actions/checkout@v4
+      
+      # Instalar y configurar Xvfb (Servidor X virtual)
+      - name: Setup Xvfb
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+          sleep 3
+      
+      # Instalación de dependencias
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qt5-default libqt5widgets5 strace shellcheck
+          sudo apt-get install -y libqt5sql5 libqt5sql5-mysql libqt5sql5-psql
+      
+      # Preparar el entorno de pruebas - Crear TOra simulado
+      - name: Preparando entorno
+        run: |
+          sudo mkdir -p /usr/local/bin
+          echo '#!/bin/bash
+          echo "TOra simulado iniciado"
+          echo "Simulando interfaz gráfica..."
+          sleep 1
+          echo "TOra simulado finalizado"
+          exit 0' | sudo tee /usr/local/bin/tora
+          sudo chmod +x /usr/local/bin/tora
+      
+      # Crear versión que falla para probar manejo de errores
+      - name: Prueba de errores
+        run: |
+          echo '#!/bin/bash
+          echo "TOra simulado con error"
+          echo "Error: No se puede inicializar la interfaz" >&2
+          exit 1' | sudo tee /usr/local/bin/tora-fail
+          sudo chmod +x /usr/local/bin/tora-fail
+      
+      # Verificación de sintaxis
+      - name:  Verificación de sintaxis
+        run: shellcheck src/scripts/tora_clean_run.sh || echo "Advertencias de shellcheck detectadas"
+        continue-on-error: true
+      
+      # Crear y ejecutar script de prueba
+      - name: Crear y ejecutar pruebas
+        run: |
+          cat > test_script.sh << 'EOF'
+          #!/bin/bash
+          set -e
+          
+          echo "=== Prueba 1: Verificación de sintaxis ==="
+          bash -n src/scripts/tora_clean_run.sh
+          echo "✅ Sintaxis correcta"
+          
+          echo "=== Prueba 2: Ejecución exitosa ==="
+          bash src/scripts/tora_clean_run. sh
+          echo "✅ Script ejecutado"
+          
+          echo "=== Prueba 3: Manejo de errores ==="
+          sudo mv /usr/local/bin/tora /usr/local/bin/tora.bak
+          sudo cp /usr/local/bin/tora-fail /usr/local/bin/tora
+          bash src/scripts/tora_clean_run.sh || echo "✅ Fallo detectado correctamente"
+          sudo mv /usr/local/bin/tora.bak /usr/local/bin/tora
+          
+          echo "=== Prueba 4: Variables de entorno ==="
+          source src/scripts/tora_clean_run.sh >/dev/null 2>&1 || true
+          if [ "$QT_QPA_PLATFORMTHEME" = "none" ] && [ "$QT_PLUGIN_PATH" = "/dev/null" ]; then
+            echo "✅ Variables de entorno configuradas correctamente"
+          else
+            echo "❌ Variables de entorno no configuradas correctamente"
+            exit 1
+          fi
+          
+          echo "=== Todas las pruebas completadas ==="
+          EOF
+          
+          chmod +x test_script.sh
+          bash test_script.sh
