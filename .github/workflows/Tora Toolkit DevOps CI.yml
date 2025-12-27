@@ -8,10 +8,10 @@ on:
 
 jobs: 
   build: 
-    runs-on: ubuntu-latest  # ✅ Corregido: "latest" sin 's'
+    runs-on: ubuntu-latest  # Ubuntu 20.04 (base similar a Linux Mint)
     
     env: 
-      DISPLAY: ": 99.0"  # ✅ Corregido: formato correcto
+      DISPLAY: ": 99.0" # Variables de entorno para las pruebas
     
     steps:
       # ✅ Indentación correcta:  6 espacios para "name:", 8 para "uses:"
