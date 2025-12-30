@@ -21,7 +21,7 @@ jobs:
       # Instalar y configurar Xvfb (Servidor X virtual)
       - name: Setup Xvfb
         run: |
-          sudo apt update && sudo apt upgrade
+          sudo apt update
           sudo apt-get install -y xvfb
           Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
           sleep 3
