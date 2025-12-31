@@ -4,9 +4,10 @@ Este documento contiene hallazgos técnicos, soluciones a problemas encontrados 
 
 ## Índice
 1. [Integración con Travis CI](#integración-con-travis-ci)
-2. [Interacciones entre Qt y GTK](#interacciones-entre-qt-y-gtk)
-3. [Falsos Positivos en Seguridad](#falsos-positivos-en-seguridad)
-4. [Integracion de suit de testing en un entorno real](#Integracion-de-suit-de-testing-en-un-entorno-real)
+2. [Sustitucion de travis CI](#sustitucion-de-travis-ci)
+3. [Interacciones entre Qt y GTK](#interacciones-entre-qt-y-gtk)
+4. [Falsos Positivos en Seguridad](#falsos-positivos-en-seguridad)
+5. [Integracion de suit de testing en un entorno real](#integracion-de-suit-de-testing-en-un-entorno-real)
 
 ---
 
@@ -77,6 +78,16 @@ sudo apt-get install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5
 
 ### Estado actual
 el workflow esta integrado exitosamente cumpliendo las mismas funciones que en Travis CI, pero se percive un aumento de tiempo de build considerablemente notable, pasando de 58 segundos en travis a 2 minutis con 36 segundos en github, lo cual representa un aumento de mas del doble en los tiempos de espera, se estan buscando soluciones para optimizar este tiempo.
+
+--- 
+
+**fecha de actualizacion**: 2025-12-31
+### Estado actual de la migracion
+A 4 dias de la migracion de CI que se llevo acabo los cambios ya se acentaron se manera satisfactoria, anteriormente se precento del problema del tiempo eccesivo de la build realizada en github actions en comparacion con travis ci, en este lapso de tiempo se estuvo revisando el workfkow para optimizar el tiempo de build.
+
+Despues de una revision rapida a como se ejecutaba la bulid en tiempo real se noto un aumento abrupto de tiempo en la descarga de dependencias requeridas, el aumento se devia a la ejecusion del comando ``sudo apt update && sudo apt upgrade``, el cual lo que hacia era descargar y actualizar dependensias completamente inesesarias y disparando el tiempo de build. Una vez revisado que en realidad fueran dependensias inesesarias las causantes del problema se prosedio a cambiar el comando de ``sudo apt update && sudo apt upgrade`` por ``sudo apt update`` eliminando el upgrade y por consiguiente bajando el tiempo de ejecusion en un 80%.
+
+Los resultados son mas satisfactorios, pasando de una build de 2 minutos con 36 segundos a una build de 35 segundos, superando inclusio el tiempo de ejecusion con Travis CI.
 
 ---
 
